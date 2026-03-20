@@ -1,0 +1,14 @@
+{
+  "name": "tree-sitter-teascript",
+  "version": "0.1.0",
+  "description": "Tree-sitter grammar for Teascript",
+  "main": "grammar.js",
+  "scripts": {
+    "generate": "tree-sitter generate",
+    "build": "tree-sitter build",
+    "test": "tree-sitter test"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.22.0"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "grammars": [
+    {
+      "name": "teascript",
+      "path": ".",
+      "scope": "source.teascript",
+      "file-types": ["tea"],
+      "injection-regex": "^tea$",
+      "highlights": "queries/highlights.scm"
+    }
+  ],
+  "metadata": {
+    "version": "0.4.1",
+    "license": "MIT",
+    "authors": [
+      {
+        "name": "",
+        "email": "",
+        "url": ""
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/revengerwizard/tree-sitter-teascript"
+    }
+  }
+}
