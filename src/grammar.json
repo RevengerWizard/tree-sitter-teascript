@@ -19,6 +19,14 @@
         },
         {
           "type": "SYMBOL",
+          "name": "export_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "from_import_statement"
+        },
+        {
+          "type": "SYMBOL",
           "name": "class_declaration"
         },
         {

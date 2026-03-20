@@ -1,3 +1,12 @@
+;; Keywords
+["export" "import" "from" "as" "function" "var" "const"] @keyword
+
+["return" "continue" "break" "if" "else" "for" "switch" "case" "default"] @return
+
+["and" "or" "not"] @keyword
+
+["true" "false"] @constant.builtin
+
 (identifier) @variable
 
 (function_declaration name: (identifier) @function)
@@ -32,42 +41,13 @@
 
 (comment) @comment
 
-"and" @keyword.operator
-"or" @keyword.operator
-"not" @keyword.operator
-"is" @keyword.operator
+["=" "+" "-" "*" "/" "%" "**" "!" "~" "&" "|" "^" "<<" ">>"] @keyword.operator
 
-"=" @keyword.operator
-"+" @keyword.operator
-"-" @keyword.operator
-"*" @keyword.operator
-"/" @keyword.operator
-"%" @keyword.operator
-"**" @keyword.operator
-"!" @keyword.operator
-"~" @keyword.operator
-"&" @keyword.operator
-"|" @keyword.operator
-"^" @keyword.operator
-"<<" @keyword.operator
-">>" @keyword.operator
-"+=" @keyword.operator
-"-=" @keyword.operator
-"*=" @keyword.operator
-"/=" @keyword.operator
-"%=" @keyword.operator
-"**=" @keyword.operator
-"&=" @keyword.operator
-"|=" @keyword.operator
-"^=" @keyword.operator
-"==" @keyword.operator
-"!=" @keyword.operator
-"<" @keyword.operator
-">" @keyword.operator
-"<=" @keyword.operator
-">=" @keyword.operator
-".." @keyword.operator
-"..." @keyword.operator
+["+=" "-=" "*=" "/=" "%=" "**=" "&=" "|=" "^=" "==" "!="] @keyword.operator
+
+["<" ">" "<=" ">="] @keyword.operator
+
+[".." "..."] @keyword.operator
 
 "{" @punctuation.definition.block.begin
 "}" @punctuation.definition.block.end

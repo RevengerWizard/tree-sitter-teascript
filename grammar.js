@@ -9,6 +9,8 @@ module.exports = grammar({
     statement: ($) =>
       choice(
         $.import_statement,
+        $.export_statement,
+        $.from_import_statement,
         $.class_declaration,
         $.function_declaration,
         $.variable_declaration,
