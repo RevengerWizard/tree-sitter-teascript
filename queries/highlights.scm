@@ -1,7 +1,14 @@
 ;; Keywords
 ["export" "import" "from" "as" "function" "var" "const" "class" "new"] @keyword
 
-["return" "continue" "break" "if" "else" "for" "switch" "case" "default"] @keyword.control
+["return" "continue" "break" "if" "else" "for" "while" "do" "switch" "case" "default"] @keyword.control
+
+(while_statement "while" @keyword.control)
+(do_while_statement "do" @keyword.control)
+(case_clause "case" @keyword.control)
+(else_clause "else" @keyword.control)
+(else_if_clause "else" @keyword.control)
+(else_if_clause "if" @keyword.control)
 
 ["and" "or" "not"] @keyword
 
