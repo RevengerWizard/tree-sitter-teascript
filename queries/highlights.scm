@@ -18,6 +18,8 @@
 
 (function_declaration name: (identifier) @function)
 (lambda_expression) @function
+(postfix_expression (call_suffix)) @function.call
+(new_expression) @function.call
 
 (class_declaration name: (identifier) @type)
 

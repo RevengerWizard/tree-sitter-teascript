@@ -418,6 +418,40 @@
     }
   },
   {
+    "type": "for_binding",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "for_initializer",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "expression",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "for_statement",
     "named": true,
     "fields": {},
@@ -434,11 +468,11 @@
           "named": true
         },
         {
-          "type": "identifier",
+          "type": "for_binding",
           "named": true
         },
         {
-          "type": "variable_declaration",
+          "type": "for_initializer",
           "named": true
         }
       ]

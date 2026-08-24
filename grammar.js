@@ -106,7 +106,7 @@ module.exports = grammar({
         seq(
           "for",
           "(",
-          optional($.variable_declaration),
+          optional($.for_initializer),
           ";",
           optional($.expression),
           ";",
@@ -114,8 +114,16 @@ module.exports = grammar({
           ")",
           $.block,
         ),
-        seq("for", $.identifier, "in", $.expression, $.block),
+        seq("for", $.for_binding, "in", $.expression, $.block),
       ),
+
+    for_initializer: ($) =>
+      choice(
+        seq(optional(choice("var", "const")), $.identifier, optional(seq("=", $.expression))),
+        seq(optional(choice("var", "const")), $.identifier, "in", $.expression),
+      ),
+
+    for_binding: ($) => seq(optional(choice("var", "const")), $.identifier),
 
     switch_statement: ($) =>
       seq(
