@@ -1,7 +1,7 @@
 ;; Keywords
-["export" "import" "from" "as" "function" "var" "const"] @keyword
+["export" "import" "from" "as" "function" "var" "const" "class" "new"] @keyword
 
-["return" "continue" "break" "if" "else" "for" "switch" "case" "default"] @return
+["return" "continue" "break" "if" "else" "for" "switch" "case" "default"] @keyword.control
 
 ["and" "or" "not"] @keyword
 
