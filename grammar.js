@@ -27,18 +27,20 @@ module.exports = grammar({
       ),
 
     import_statement: ($) =>
-      seq("import", $.identifier, optional(seq("as", $.identifier))),
+      seq("import", $.module_specifier, optional(seq("as", $.identifier))),
 
     from_import_statement: ($) =>
       seq(
         "from",
-        $.identifier,
+        $.module_specifier,
         "import",
         choice(
           $.identifier,
           seq("(", repeat(seq($.identifier, optional(","))), ")"),
         ),
       ),
+
+    module_specifier: ($) => choice($.identifier, $.string),
 
     export_statement: ($) =>
       seq(
