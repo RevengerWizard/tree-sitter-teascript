@@ -42,7 +42,7 @@
           "named": true
         },
         {
-          "type": "ternary_expression",
+          "type": "comma_expression",
           "named": true
         }
       ]
@@ -202,6 +202,21 @@
       "types": [
         {
           "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "comma_expression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "ternary_expression",
           "named": true
         }
       ]
@@ -538,6 +553,21 @@
       "types": [
         {
           "type": "type_annotation",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "identifier_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
           "named": true
         }
       ]
@@ -1222,7 +1252,7 @@
     }
   },
   {
-    "type": "variable_declaration",
+    "type": "variable_assignment_item",
     "named": true,
     "fields": {},
     "children": {
@@ -1235,6 +1265,44 @@
         },
         {
           "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "variable_assignment_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "variable_assignment_item",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "variable_declaration",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "expression",
+          "named": true
+        },
+        {
+          "type": "identifier_list",
+          "named": true
+        },
+        {
+          "type": "variable_assignment_list",
           "named": true
         }
       ]

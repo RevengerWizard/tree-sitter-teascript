@@ -78,9 +78,25 @@ module.exports = grammar({
 
     variable_declaration: ($) =>
       choice(
-        seq("var", $.identifier, optional(seq("=", $.expression))),
-        seq("const", $.identifier, "=", $.expression),
+        seq("var", $.identifier_list, optional(seq("=", $.expression))),
+        seq("const", $.identifier_list, optional(seq("=", $.expression))),
+        seq(
+          choice("var", "const"),
+          $.variable_assignment_list,
+        ),
       ),
+
+    identifier_list: ($) =>
+      prec.left(1, seq($.identifier, repeat(seq(",", $.identifier)))),
+
+    variable_assignment_list: ($) =>
+      seq(
+        $.variable_assignment_item,
+        repeat(seq(",", $.variable_assignment_item)),
+      ),
+
+    variable_assignment_item: ($) =>
+      prec.right(2, seq($.identifier, "=", $.expression)),
 
     if_statement: ($) =>
       seq(
@@ -155,7 +171,7 @@ module.exports = grammar({
       prec.right(
         1,
         seq(
-          $.ternary_expression,
+          $.comma_expression,
           optional(
             seq(
               choice(
@@ -174,6 +190,12 @@ module.exports = grammar({
             ),
           ),
         ),
+      ),
+
+    comma_expression: ($) =>
+      prec.left(
+        0,
+        seq($.ternary_expression, repeat(seq(",", $.ternary_expression))),
       ),
 
     ternary_expression: ($) =>
