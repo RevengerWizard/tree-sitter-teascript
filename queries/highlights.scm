@@ -19,7 +19,7 @@
 (boolean) @constant.builtin
 (nil) @constant.builtin
 (self) @variable.builtin
-(super) @variable.builtin
+(super) @keyword
 
 (binary_number) @constant.numeric.integer
 (octal_number) @constant.numeric.integer
